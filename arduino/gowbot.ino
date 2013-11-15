@@ -1,19 +1,16 @@
 #include <Wire.h>
-#include "RTClib.h"
+
 #include <math.h> 
 int BH1750address = 0x23; //setting i2c address
+
 int light = 5;
 int ph_probe = A0;
-
 int water_temp = 13
 
 byte buff[2];
-RTC_Millis rtc;
 
 void setup () {
     Serial.begin(57600);
-    // following line sets the RTC to the date & time this sketch was compiled
-    rtc.begin(DateTime(__DATE__, __TIME__));
     pinMode(light, OUTPUT);
     Wire.begin();
 
